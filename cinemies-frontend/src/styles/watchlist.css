@@ -1,0 +1,240 @@
+.watchlist-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+  color: white;
+  padding-top: 80px;
+}
+
+.watchlist-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.watchlist-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.watchlist-header h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.watchlist-header p {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1.1rem;
+}
+
+.watchlist-tabs {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+.watchlist-tabs .tab {
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  border: 2px solid transparent;
+}
+
+.watchlist-tabs .tab:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.watchlist-tabs .tab.active {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-color: transparent;
+}
+
+.watchlist-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem;
+  gap: 1rem;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid rgba(255, 255, 255, 0.1);
+  border-top-color: #667eea;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.watchlist-loading p {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.watchlist-content {
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.watchlist-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+.empty-state {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.empty-icon {
+  font-size: 5rem;
+  margin-bottom: 1rem;
+  opacity: 0.3;
+}
+
+.empty-state h3 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.empty-state p {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 1.1rem;
+}
+
+.movie-card {
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.movie-card:hover {
+  transform: translateY(-8px);
+}
+
+.watched-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #4caf50;
+  color: white;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  z-index: 2;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.movie-card-poster {
+  aspect-ratio: 2/3;
+  overflow: hidden;
+  background: #000;
+}
+
+.movie-card-poster img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.movie-card:hover .movie-card-poster img {
+  transform: scale(1.05);
+}
+
+.movie-card-no-poster {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.1);
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.movie-card-info {
+  padding: 1rem;
+}
+
+.movie-card-info h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.movie-card-meta {
+  display: flex;
+  gap: 0.8rem;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.movie-card-meta .rating {
+  color: #ffd700;
+  font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .watchlist-container {
+    padding: 1rem;
+  }
+
+  .watchlist-header h1 {
+    font-size: 2rem;
+  }
+
+  .watchlist-tabs {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .watchlist-tabs .tab {
+    width: 100%;
+  }
+
+  .watchlist-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+  }
+}

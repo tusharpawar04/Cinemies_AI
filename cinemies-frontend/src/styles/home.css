@@ -1,0 +1,128 @@
+/* ═══════════════════════════════════════════
+   AUTHENTICATED HOME PAGE
+   Clean, direct access to mood selector and movies
+   ═══════════════════════════════════════════ */
+
+.home-page {
+  min-height: 100vh;
+  background: var(--bg-void);
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Animated background gradients */
+.home-background {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.home-gradient {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.15;
+  animation: gradientFloat 20s ease-in-out infinite;
+}
+
+.home-gradient--1 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.4) 0%, transparent 70%);
+  top: -10%;
+  left: -10%;
+  animation-delay: 0s;
+}
+
+.home-gradient--2 {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(167, 139, 250, 0.3) 0%, transparent 70%);
+  top: 50%;
+  right: -15%;
+  animation-delay: -7s;
+}
+
+.home-gradient--3 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(236, 72, 153, 0.2) 0%, transparent 70%);
+  bottom: -10%;
+  left: 30%;
+  animation-delay: -14s;
+}
+
+@keyframes gradientFloat {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(30px, -40px) scale(1.1); }
+  66% { transform: translate(-20px, 30px) scale(0.9); }
+}
+
+/* Content */
+.home-content {
+  position: relative;
+  z-index: 1;
+  padding-top: 80px;
+}
+
+/* Hero Section */
+.home-hero {
+  text-align: center;
+  padding: var(--space-4xl) var(--space-xl) var(--space-2xl);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.home-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-tight);
+  margin-bottom: var(--space-md);
+  background: linear-gradient(135deg, #fff, rgba(255,255,255,0.7));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.home-subtitle {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: var(--text-tertiary);
+  line-height: var(--lh-relaxed);
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mood Selector Spacing */
+.home-content #moods {
+  animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+/* Movies Feed */
+.home-content #infinite-feed {
+  animation: fadeInUp 0.8s ease-out 0.6s both;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .home-content {
+    padding-top: 60px;
+  }
+
+  .home-hero {
+    padding: var(--space-2xl) var(--space-md) var(--space-xl);
+  }
+}

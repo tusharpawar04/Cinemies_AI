@@ -1,0 +1,47 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+ENV/
+env/
+
+# Testing
+.pytest_cache/
+*.log
+
+# Documentation
+*.md
+ARCHITECTURE.md
+COMPLETE_PROJECT_OVERVIEW.md
+COMPLETION_CHECKLIST.md
+IMPLEMENTATION_SUMMARY.md
+QUICK_START_GUIDE.md
+STATUS_REPORT.md
+TASK_*.md
+
+# Test files
+test_*.py
+embed_movies.py
+build_index.py
+load_from_db.py
+moods.py
+verify_*.py
+
+# Data files
+*.npy
+*.pkl
+*.index
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Git
+.git/
+.gitignore

@@ -1,0 +1,36 @@
+{
+  "name": "Cinemies — Feel Your Next Movie",
+  "short_name": "Cinemies",
+  "description": "A mood-first movie discovery platform. Discover films matched to your emotional frequency.",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#030305",
+  "background_color": "#030305",
+  "categories": ["entertainment", "lifestyle"],
+  "icons": [
+    {
+      "src": "/vite.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [],
+  "shortcuts": [
+    {
+      "name": "Mind-Bending",
+      "short_name": "Mind-Bending",
+      "description": "Discover mind-bending movies",
+      "url": "/?mood=mind_bending",
+      "icons": [{ "src": "/vite.svg", "sizes": "any" }]
+    },
+    {
+      "name": "Comfort Food",
+      "short_name": "Comfort",
+      "description": "Find comfort movies",
+      "url": "/?mood=comfort_food",
+      "icons": [{ "src": "/vite.svg", "sizes": "any" }]
+    }
+  ]
+}
